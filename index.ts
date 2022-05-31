@@ -11,7 +11,7 @@
 // console.log(any([0, 0, 1, 0])); -> true
 // console.log(any([0, 0, 0, 0])); -> false
 
-const any = (array: any[], callback?: (item: any) => boolean): boolean => {
+const any = <T>(array: T[], callback?: (item: T) => boolean): boolean => {
   if(callback === undefined) {
     callback = (item) => !!item;
   }
@@ -19,6 +19,7 @@ const any = (array: any[], callback?: (item: any) => boolean): boolean => {
   return array.some(callback);
 }
 
-console.log(any([0, 1, 1, 0], x => x >= 2))
-console.log(any([0, 0, 1, 0])); 
-console.log(any([0, 0, 0, 0])); 
+console.log(any<number>([0, 1, 2, 0], x => x >= 2))
+console.log(any<string>(['0', '1', '1', '0'], x => x !== '1'))
+console.log(any<number>([0, 0, 1, 0])); 
+console.log(any<number>([0, 0, 0, 0])); 
