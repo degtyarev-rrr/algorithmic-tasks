@@ -3,21 +3,20 @@
 // getLengthOfShortestWord(‘Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.’) 	// => 2
 
 const getLengthOfShortestWord = (str: string): number => {
-  let minLength = str.length;
   let currentLength = str.length;
 
-  for(let i = 0; i < str.length; i++) {
-    if(',.!? '.indexOf(str[i]) === -1) {
+  return str.split('').reduce((minLength, item) => {
+    if(!(',.!? '.includes(item))) {
       currentLength++;
+      return minLength;
     } else {
-      if(currentLength === 0) continue;
+      if(!currentLength) return minLength;
 
       minLength = Math.min(minLength, currentLength);
       currentLength = 0;
+      return minLength;
     }
-  }
-
-  return minLength;
+  }, str.length)
 }
 
 console.log(getLengthOfShortestWord('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')); 	// => 2
