@@ -3,11 +3,7 @@
 // Примечание: функция принимает целое число и возвращает целое число.
 
 const square = (x: number): number => {
-  let answer = x.toString();
-
-  answer = answer.split('').map(item => +item * +item).join('');
-  
-  return +answer;
+ return +x.toString().split('').map(item => +item * +item).join('');
 }
 
 console.log(square(9119));
