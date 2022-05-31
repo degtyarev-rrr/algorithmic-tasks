@@ -8,7 +8,7 @@
 // console.log(without([2, 1, 10, 20, 5], 1, 2, 5)) -> [10, 20]
 
 const without = (array: any[], ...values: any[]): any[] => {
-  return array.filter(item => values.indexOf(item) === -1);
+  return array.filter(item => !values.includes(item));
 }
 
 console.log(without([2, 1, 2, 3], 1, 2)) // -> [3]
