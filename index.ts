@@ -6,13 +6,13 @@
 
 const union = (firstArray: any[], secondArray: any[]): any[] => {
   const unionArray = firstArray.concat(secondArray);
-  const unionObject = {};
+  const unionSet = new Set();
   const answer = [];
 
   unionArray.forEach(item => {
-    if(!unionObject[item]) {
+    if(!unionSet.has(item)) {
       answer.push(item);
-      unionObject[item] = true;
+      unionSet.add(item);
     }
   });
 
