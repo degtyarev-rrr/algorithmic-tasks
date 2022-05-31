@@ -7,7 +7,7 @@
 // getMiddle("A") 	// should return "A"
 
 const getMiddle = (str: string): string => {
-  if(str.length % 2 === 0) {
+  if(!(str.length % 2)) {
     return str[str.length / 2 - 1] + str[str.length / 2];
   }
 
