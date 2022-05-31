@@ -6,17 +6,9 @@
 
 const union = (firstArray: any[], secondArray: any[]): any[] => {
   const unionArray = firstArray.concat(secondArray);
-  const unionObject = {};
-  const answer = [];
+  const set = new Set(unionArray);
 
-  unionArray.forEach(item => {
-    if(!unionObject[item]) {
-      answer.push(item);
-      unionObject[item] = true;
-    }
-  });
-
-  return answer;
+  return Array.from(set);
 }
 
 console.log(union([5, 1, 2, 3, 3], [4, 3, 2])); // [5, 1, 2, 3, 4]
