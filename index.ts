@@ -9,10 +9,10 @@ const divisors = (num: number): number[] | string => {
   const answer = [];
   
   for (let i = 2; i < num; i++) {
-    if(num % i === 0) answer.push(i);
+    if(!(num % i)) answer.push(i);
   }
 
-  if(answer.length === 0) return `${num} is prime`;
+  if(!answer.length) return `${num} is prime`;
 
   return answer;
 }
