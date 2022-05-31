@@ -10,7 +10,7 @@
 // ];
 // membersOnActiveMeetups(meetups); // 1500
 
-type Meetup = {
+interface Meetup {
   name: string;
   isActive: boolean;
   members: number;
